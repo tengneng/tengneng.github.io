@@ -19,6 +19,7 @@ Function.prototype.myCall = function(object) {
     obj.fn = this;
     let arg = [...arguments].slice(1);
     let result = obj.fn(...arg);
+    delete obj.fn;
     return result
 }
 ```
@@ -31,6 +32,7 @@ Function.prototype.myApply = function(object) {
     obj.fn = this;
     let arg = [...arguments].slice(1);
     let result = obj.fn(arg);
+    delete obj.fn;
     return result
 }
 ```
